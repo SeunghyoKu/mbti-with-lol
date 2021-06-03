@@ -1,0 +1,16 @@
+{
+  "name": "mbti-with-lol",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SeunghyoKu/mbti-with-lol.git",
+  "author": "Seunghyo <seunghyoku@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "10.0.0",
+    "koa": "2.13.1",
+    "koa-bodyparser": "4.3.0",
+    "koa-router": "10.0.0",
+    "koa2-cors": "2.0.6",
+    "mongoose": "5.12.12"
+  }
+}
