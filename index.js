@@ -4,7 +4,7 @@ const Router = require("koa-router");
 const app = new Koa();
 const cors = require("koa2-cors");
 const router = new Router();
-const api = require("./api");
+const api = require("./src/api");
 
 const mongoose = require("mongoose");
 const bodyParser = require("koa-bodyparser");
