@@ -6,6 +6,7 @@ import P from "components/PWithFont";
 import PGothic from "components/PGothic";
 import LCK from "components/LCK";
 import Champion from "components/Champion";
+import Loading from "components/Loading";
 
 import AnswerContext from "contexts/answer";
 
@@ -21,8 +22,11 @@ const Result = (props) => {
     recommendation,
   } = result;
 
+  console.log(comment);
+
   return (
     <>
+      {comment === undefined && <Loading />}
       {/* <img src={image} alt={mbti} /> */}
       <P size="24" description={comment}></P>
       <P size="40" description={mbti}></P>
