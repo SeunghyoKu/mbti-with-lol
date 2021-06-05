@@ -12,14 +12,11 @@ const PGothic = ({ margin, size, description }) => {
 export default PGothic;
 
 const P = styled.p`
-  margin-left: 20px;
-  margin-right: 20px;
-  margin: ${({ margin }) => margin + "px"};
   font-family: IBMPlexSansKR-Regular;
   font-size: ${({ size }) => size + "px"};
   text-align: center;
 
   @media (max-width: 700px) {
-    font-size: ${({ size }) => size / 6 + "vw"};
+    font-size: 14px;
   }
 `;

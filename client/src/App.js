@@ -27,12 +27,13 @@ const App = () => {
     }
   };
 
-  const onAnswer = (curr) => {
+  const onAnswer = async (curr) => {
     const nextAnswer = answer + curr;
     setAnswer(nextAnswer);
 
     if (nextAnswer.length === 12) {
-      getResult(nextAnswer);
+      const result = await getResult(nextAnswer);
+      setAnswer(result);
     }
   };
 

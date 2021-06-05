@@ -19,7 +19,7 @@ const P = styled.p`
   font-size: ${({ size }) => size + "px"};
   text-align: center;
 
-  @media (max-width: 700px) {
-    font-size: 6vw;
+  @media (max-width: 800px) {
+    font-size: ${({ size }) => size / 6 + "vw"};
   }
 `;
