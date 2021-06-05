@@ -15,7 +15,7 @@ const Result = (props) => {
     comment,
     description,
     friend,
-    image,
+    // image,
     lck,
     mbti,
     recommendation,
