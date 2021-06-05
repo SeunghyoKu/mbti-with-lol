@@ -9,7 +9,7 @@ import Result from "pages/result";
 
 const Template = (props) => {
   const { status } = useContext(PageContext);
-  console.log(status);
+
   if (status === "ready") {
     return (
       <StyledTemplate>
