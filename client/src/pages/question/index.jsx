@@ -15,7 +15,7 @@ const Question = (props) => {
   return (
     <>
       <P size="30" description={"Q." + (status + 1)}></P>
-      <PGothic size="30" description={question}></PGothic>
+      <PGothic size="30" margin="55" description={question}></PGothic>
       <QuestionDiv description={answer[0]} answer="0" />
       <QuestionDiv description={answer[1]} answer="1" />
     </>
