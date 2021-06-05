@@ -28,15 +28,19 @@ const Result = (props) => {
       <P size="40" description={mbti}></P>
       <PGothic margin="30" size="20" description={description} />
       {lck && <P size="18" margin="5" description="나와 같은 성격의 선수" />}
-      <StyledDiv>{lck && lck.map((el) => <LCK player={el} />)}</StyledDiv>
+      <StyledDiv>
+        {lck && lck.map((el) => <LCK key={el} player={el} />)}
+      </StyledDiv>
       {recommendation && <P size="18" margin="5" description="추천 챔피언" />}
-      <Champions>
+      <StyledDiv>
         {recommendation &&
-          recommendation.map((el) => <Champion source={el.image} />)}
-      </Champions>
+          recommendation.map(({ name, image }) => (
+            <Champion key={name} source={image} name={name} />
+          ))}
+      </StyledDiv>
       {lck && <P size="18" margin="5" description="같이 하면 좋을 친구" />}
       <StyledDiv>
-        {friend && friend.map((el) => <LCK player={el.name} />)}
+        {friend && friend.map((el) => <LCK key={el.name} player={el.name} />)}
       </StyledDiv>
       <Button description="처음으로" />
     </>
@@ -47,12 +51,7 @@ export default Result;
 
 const StyledDiv = styled.div`
   display: flex;
+  justify-content: center;
+  margin: 0 auto 10px auto;
   flex-direction: row;
-  margin-bottom: 10px;
-`;
-
-const Champions = styled.div`
-  display: block;
-  margin: 0 auto;
-  text-align: center;
 `;
