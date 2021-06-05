@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const PWithFont = ({ margin, size, description }) => {
+const PGothic = ({ margin, size, description }) => {
   return (
     <P margin={margin} size={size}>
       {description}
@@ -9,17 +9,17 @@ const PWithFont = ({ margin, size, description }) => {
   );
 };
 
-export default PWithFont;
+export default PGothic;
 
 const P = styled.p`
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: ${({ margin }) => margin + "px"};
-  font-family: DungGeunMo;
+  margin: 55px;
+  font-family: IBMPlexSansKR-Regular;
   font-size: ${({ size }) => size + "px"};
   text-align: center;
 
   @media (max-width: 700px) {
-    font-size: 6vw;
+    font-size: 5vw;
   }
 `;

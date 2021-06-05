@@ -4,20 +4,35 @@ import styled from "styled-components";
 import Template from "./pages";
 
 import PageContext from "./contexts/page";
+import AnswerContext from "./contexts/answer";
+
+import getResult from "./service/getResult";
 
 const App = () => {
   const [page, setPage] = useState("ready");
+  const [answer, setAnswer] = useState("");
 
   const onClick = () => {
     if (page === "ready") {
       setPage(0);
+      setAnswer("");
     } else if (page >= 0 && page < 11) {
       const nextPage = page + 1;
       setPage(nextPage);
     } else if (page === 11) {
       setPage("result");
+      setAnswer("");
     } else {
       setPage("ready");
+    }
+  };
+
+  const onAnswer = (curr) => {
+    const nextAnswer = answer + curr;
+    setAnswer(nextAnswer);
+
+    if (nextAnswer.length === 12) {
+      getResult(nextAnswer);
     }
   };
 
@@ -25,7 +40,9 @@ const App = () => {
     <PageContext.Provider value={{ status: page, action: onClick }}>
       <Reset />
       <StyledDiv className="App">
-        <Template />
+        <AnswerContext.Provider value={{ result: answer, action: onAnswer }}>
+          <Template />
+        </AnswerContext.Provider>
       </StyledDiv>
     </PageContext.Provider>
   );

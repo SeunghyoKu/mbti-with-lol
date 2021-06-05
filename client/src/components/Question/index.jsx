@@ -2,17 +2,19 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 
 import PageContext from "contexts/page";
+import AnswerContext from "contexts/answer";
 
-const Button = ({ description, answer }) => {
+const Question = ({ description, answer }) => {
   const { action: onClick } = useContext(PageContext);
-  return <StyledButton onClick={onClick}>{description}</StyledButton>;
+  const { action: onAnswer } = useContext(AnswerContext);
+  const handleClick = (e) => {
+    onClick();
+    onAnswer(answer);
+  };
+  return <StyledButton onClick={handleClick}>{description}</StyledButton>;
 };
 
-export default Button;
-
-Button.defaultProps = {
-  question: "...",
-};
+export default Question;
 
 const StyledButton = styled.button`
   display: flex;
@@ -24,8 +26,9 @@ const StyledButton = styled.button`
   margin: 5px;
   border: none;
   border-radius: 1rem;
-  font-size: 24px;
-  font-family: DungGeunMo;
+  font-size: 21px;
+  cursor: pointer;
+  font-family: IBMPlexSansKR-Regular;
   background: #15aabf;
   color: white;
 
@@ -37,6 +40,6 @@ const StyledButton = styled.button`
   @media (max-width: 700px) {
     height: 40px;
     padding: 30px;
-    font-size: 18px;
+    font-size: 14px;
   }
 `;
