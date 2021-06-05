@@ -15,4 +15,8 @@ const P = styled.p`
   margin-bottom: ${({ margin }) => margin + "px"};
   font-family: DungGeunMo;
   font-size: ${({ size }) => size + "px"};
+
+  @media (max-width: 700px) {
+    font-size: 6vw;
+  }
 `;

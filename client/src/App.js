@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { Reset } from "styled-reset";
 import styled from "styled-components";
+import Template from "./pages";
 
-import Template from "./pages/template";
+import PageContext from "./contexts/page";
 
-function App() {
+const App = () => {
+  const [page, setPage] = useState("ready");
+
+  const onClick = () => {
+    if (page === "ready") {
+      setPage(0);
+    } else if (page >= 0 && page < 11) {
+      const nextPage = page + 1;
+      setPage(nextPage);
+    } else if (page === 11) {
+      setPage("result");
+    } else {
+      setPage("ready");
+    }
+  };
+
   return (
-    <>
+    <PageContext.Provider value={{ status: page, action: onClick }}>
       <Reset />
       <StyledDiv className="App">
         <Template />
       </StyledDiv>
-    </>
+    </PageContext.Provider>
   );
-}
+};
 
 export default App;
 

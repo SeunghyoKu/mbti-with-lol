@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
+import PageContext from "contexts/page";
+
 const Button = ({ description }) => {
-  return <StyledButton>{description}</StyledButton>;
+  const { action } = useContext(PageContext);
+  return <StyledButton onClick={action}>{description}</StyledButton>;
 };
 
 export default Button;
@@ -13,7 +16,8 @@ Button.defaultProps = {
 
 const StyledButton = styled.button`
   display: flex;
-  height: 80px;
+  width: 70%;
+  height: 50px;
   align-items: center;
   justify-content: center;
   padding: 40px;
@@ -27,5 +31,11 @@ const StyledButton = styled.button`
   &:hover {
     opacity: 95%;
     transform: scale(0.97);
+  }
+
+  @media (max-width: 700px) {
+    height: 40px;
+    padding: 30px;
+    font-size: 18px;
   }
 `;
