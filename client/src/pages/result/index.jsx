@@ -11,7 +11,6 @@ import AnswerContext from "contexts/answer";
 
 const Result = (props) => {
   const { result } = useContext(AnswerContext);
-  console.log(result);
   const {
     comment,
     description,
@@ -21,9 +20,6 @@ const Result = (props) => {
     mbti,
     recommendation,
   } = result;
-
-  console.log(lck);
-  lck && lck.map((el) => console.log(el));
 
   return (
     <>
