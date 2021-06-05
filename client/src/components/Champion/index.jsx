@@ -7,7 +7,7 @@ const Champion = ({ source, name }) => {
   return (
     <StyledDiv>
       <StyledChampion src={source}></StyledChampion>
-      <P description={name} margin="5"></P>
+      <P description={name} margin="5" size="14"></P>
     </StyledDiv>
   );
 };
