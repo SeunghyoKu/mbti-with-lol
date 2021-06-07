@@ -22,8 +22,6 @@ const Result = (props) => {
     recommendation,
   } = result;
 
-  console.log(comment);
-
   return (
     <>
       {comment === undefined && <Loading />}

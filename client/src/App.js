@@ -6,9 +6,7 @@ import Template from "./pages";
 import PageContext from "./contexts/page";
 import AnswerContext from "./contexts/answer";
 
-import getResult from "./service/getResult";
-
-const App = () => {
+const App = ({ mbti }) => {
   const [page, setPage] = useState("ready");
   const [answer, setAnswer] = useState("");
 
@@ -32,7 +30,9 @@ const App = () => {
     setAnswer(nextAnswer);
 
     if (nextAnswer.length === 12) {
-      const result = await getResult(nextAnswer);
+      mbti.setMbtiType(nextAnswer);
+      const result = await mbti.getResult();
+      await mbti.saveResult();
       setAnswer(result);
     }
   };
