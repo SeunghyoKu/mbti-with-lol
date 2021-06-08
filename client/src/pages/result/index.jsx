@@ -37,7 +37,8 @@ const Result = (props) => {
   const [loading, setLoading] = useState(loadingTexts[randomId]);
 
   setTimeout(() => {
-    if (!lck) setLoading("너무 오래 걸리면, 다시 시도해주시겠어요?");
+    if (!lck)
+      setLoading("너무 오래 걸리면,\n 다시 시도해주시겠어요?\n 미안해요");
   }, 5000);
 
   return (

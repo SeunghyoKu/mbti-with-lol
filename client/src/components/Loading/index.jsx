@@ -1,13 +1,14 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
+import P from "components/PGothic";
 const Loading = ({ text }) => {
   return (
     <div>
       <PacmanTop />
       <PacmanBottom />
       <Heart />
-      <p>{text + "..."}</p>
+      <P description={text + "..."}></P>
     </div>
   );
 };
@@ -54,7 +55,7 @@ const PacmanBottom = styled.div`
 
 const Eat = keyframes`
     from {
-        left: 240px;
+        left: 200px;
     }
     to {
         left: 30px;
