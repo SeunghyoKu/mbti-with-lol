@@ -7,6 +7,8 @@ import PGothic from "components/PGothic";
 import LCK from "components/LCK";
 import Champion from "components/Champion";
 import Loading from "components/Loading";
+import Bar from "components/Bar";
+import Social from "components/Social";
 
 import AnswerContext from "contexts/answer";
 
@@ -33,7 +35,9 @@ const Result = (props) => {
       <StyledDiv>
         {lck && lck.map((el) => <LCK key={el} player={el} />)}
       </StyledDiv>
-      {recommendation && <P size="18" margin="5" description="추천 챔피언" />}
+      {recommendation && (
+        <P size="18" margin="5" description="이런 챔피언은 어때요?" />
+      )}
       <StyledDiv>
         {recommendation &&
           recommendation.map(({ name, image }) => (
@@ -45,6 +49,9 @@ const Result = (props) => {
         {friend && friend.map((el) => <LCK key={el.name} player={el.name} />)}
       </StyledDiv>
       <Button description="처음으로" />
+      {lck && <Bar />}
+      {lck && <P size="18" margin="5" description="공유하기" />}
+      {lck && <Social />}
     </>
   );
 };
