@@ -11,13 +11,28 @@ const Question = ({ description, answer }) => {
     onClick();
     onAnswer(answer);
   };
-  return <StyledButton onClick={handleClick}>{description}</StyledButton>;
+  return (
+    <StyledButton onClick={handleClick}>
+      {description &&
+        description.split("\n").map((line) => {
+          return (
+            <P key={line}>
+              {line}
+              <br />
+            </P>
+          );
+        })}
+    </StyledButton>
+  );
 };
 
 export default Question;
 
+const P = styled.p``;
+
 const StyledButton = styled.button`
   display: flex;
+  flex-direction: column;
   width: 70%;
   height: 50px;
   align-items: center;
@@ -40,6 +55,6 @@ const StyledButton = styled.button`
   @media (max-width: 700px) {
     height: 40px;
     padding: 30px;
-    font-size: 14px;
+    font-size: 3.5vw;
   }
 `;

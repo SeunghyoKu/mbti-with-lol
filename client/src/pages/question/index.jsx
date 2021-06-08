@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import styled from "styled-components";
 
 import QuestionDiv from "components/Question";
 import P from "components/PWithFont";
@@ -15,7 +16,10 @@ const Question = (props) => {
   return (
     <>
       <P size="30" description={"Q." + (status + 1)}></P>
-      <PGothic size="30" margin="55" description={question}></PGothic>
+      <StyledDiv>
+        <PGothic size="30" description={question} answer={true}></PGothic>
+      </StyledDiv>
+
       <QuestionDiv description={answer[0]} answer="0" />
       <QuestionDiv description={answer[1]} answer="1" />
     </>
@@ -23,3 +27,8 @@ const Question = (props) => {
 };
 
 export default Question;
+
+const StyledDiv = styled.div`
+  text-align: center;
+  margin: 30px auto;
+`;

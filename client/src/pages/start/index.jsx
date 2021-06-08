@@ -8,7 +8,7 @@ import Bar from "components/Bar";
 const Template = (props) => {
   return (
     <>
-      <P size="40" description="내 롤 인생 챔피언 찾기"></P>
+      <P size="40" description="롤 인생 챔피언 찾기"></P>
       <Bar />
       <StyledP>내가 몰랐던 나의 인생 챔피언이 있다?!</StyledP>
       <P size="25" margin="20" description="👇👇👇👇👇"></P>
