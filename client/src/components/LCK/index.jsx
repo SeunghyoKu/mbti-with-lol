@@ -6,7 +6,7 @@ import P from "components/PGothic";
 const LCK = ({ player }) => {
   return (
     <StyledDiv>
-      <P description={player} size="14"></P>
+      <P description={player} size="16"></P>
     </StyledDiv>
   );
 };
@@ -15,7 +15,7 @@ export default LCK;
 
 const StyledDiv = styled.div`
   background: #e3fafc;
-  border-radius: 2vw;
+  border-radius: 1vh;
   padding: 10px;
   text-align: center;
   margin: 5px;

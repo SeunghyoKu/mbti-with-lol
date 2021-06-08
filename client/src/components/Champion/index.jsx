@@ -15,8 +15,10 @@ const Champion = ({ source, name }) => {
 export default Champion;
 
 const StyledDiv = styled.div`
-  margin: 10px;
-  width: 20%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  width: 25%;
 `;
 
 const StyledChampion = styled.img`

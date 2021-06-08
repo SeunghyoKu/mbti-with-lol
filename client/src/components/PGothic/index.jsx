@@ -28,6 +28,6 @@ const P = styled.span`
   line-height: 140%;
 
   @media (max-width: 700px) {
-    font-size: ${({ size }) => size / 6 + "vw"};
+    font-size: ${({ size }) => size / 5.5 + "vw"};
   }
 `;

@@ -47,6 +47,7 @@ const StyledTemplate = styled.div`
 
   @media (max-width: 700px) {
     width: 80%;
-    height: 80%;
+    height: auto;
+    padding: 10% 0 10% 0;
   }
 `;

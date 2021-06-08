@@ -94,6 +94,11 @@ const StyledSocial = styled.div`
   border-radius: 50%;
   background: white;
   cursor: pointer;
+  @media (max-width: 700px) {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+  }
 `;
 
 const A = styled.a`

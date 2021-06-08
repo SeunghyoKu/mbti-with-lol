@@ -25,7 +25,7 @@ const Link = (props) => {
         ref={textInput}
         readOnly
       ></input>
-      <StyledButton onClick={onClick}>링크 복사</StyledButton>
+      <StyledButton onClick={onClick}>복사</StyledButton>
       {clicked && <PGothic description="복사됨!" size="14"></PGothic>}
     </StyledDiv>
   );
@@ -45,6 +45,7 @@ const StyledButton = styled.button`
   color: white;
   border: none;
   border-radius: 4px;
+  font-family: DungGeunMo;
   &:active {
     background: #0b7285;
   }

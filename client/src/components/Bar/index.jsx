@@ -13,4 +13,8 @@ const StyledBar = styled.div`
   height: 1px;
   background: darkgray;
   z-index: 1;
+
+  @media (max-width: 700px) {
+    margin: 10px;
+  }
 `;

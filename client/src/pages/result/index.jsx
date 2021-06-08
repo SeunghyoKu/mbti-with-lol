@@ -47,14 +47,14 @@ const Result = (props) => {
       {/* <img src={image} alt={mbti} /> */}
       <P size="24" description={comment}></P>
       <P size="40" description={mbti}></P>
-      <PGothic margin="30" size="20" description={description} />
+      <Description>
+        <PGothic margin="30" size="20" description={description} />
+      </Description>
       {lck && <P size="18" margin="5" description="나와 같은 성격의 선수" />}
       <StyledDiv>
         {lck && lck.map((el) => <LCK key={el} player={el} />)}
       </StyledDiv>
-      {recommendation && (
-        <P size="18" margin="5" description="이런 챔피언은 어때요?" />
-      )}
+      {recommendation && <P size="18" description="이런 챔피언은 어때요?" />}
       <StyledDiv>
         {recommendation &&
           recommendation.map(({ name, image }) => (
@@ -80,4 +80,8 @@ const StyledDiv = styled.div`
   justify-content: center;
   margin: 0 auto 10px auto;
   flex-direction: row;
+`;
+
+const Description = styled.div`
+  margin: 20px;
 `;
