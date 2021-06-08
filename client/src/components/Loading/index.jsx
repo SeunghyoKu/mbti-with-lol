@@ -1,12 +1,13 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-const Loading = (props) => {
+const Loading = ({ text }) => {
   return (
     <div>
       <PacmanTop />
       <PacmanBottom />
       <Heart />
+      <p>{text + "..."}</p>
     </div>
   );
 };
@@ -53,7 +54,7 @@ const PacmanBottom = styled.div`
 
 const Eat = keyframes`
     from {
-        left: 300px;
+        left: 240px;
     }
     to {
         left: 30px;

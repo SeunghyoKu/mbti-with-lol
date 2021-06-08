@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
 import Button from "components/Button";
@@ -24,9 +24,25 @@ const Result = (props) => {
     recommendation,
   } = result;
 
+  const loadingTexts = [
+    "누누 눈 굴리는 중",
+    "아무무 친구 만드는 중",
+    "스웨인 새 모이 주는 중",
+    "룰루 깔깔 대는 중",
+    "나서스 농사 짓는 중",
+    "베인 앞구르기 연습 중",
+  ];
+
+  const randomId = Math.floor(Math.random() * loadingTexts.length);
+  const [loading, setLoading] = useState(loadingTexts[randomId]);
+
+  setTimeout(() => {
+    if (!lck) setLoading("너무 오래 걸리면, 다시 시도해주시겠어요?");
+  }, 5000);
+
   return (
     <>
-      {comment === undefined && <Loading />}
+      {comment === undefined && <Loading text={loading} />}
       {/* <img src={image} alt={mbti} /> */}
       <P size="24" description={comment}></P>
       <P size="40" description={mbti}></P>
