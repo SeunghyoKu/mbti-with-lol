@@ -14,6 +14,8 @@ const LCK = ({ player }) => {
 export default LCK;
 
 const StyledDiv = styled.div`
+  display: flex;
+  justify-content: center;
   background: #e3fafc;
   border-radius: 1vh;
   padding: 10px;
